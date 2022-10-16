@@ -74,7 +74,7 @@ const config = {
     // 打包生成html文件
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.html',
+      template: path.resolve(__dirname, 'src', 'index.html'),
       title: 'adolf'
     }),
     // 持久化moduleId，主要是为了之后研究加载代码好看一点。
