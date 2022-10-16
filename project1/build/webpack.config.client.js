@@ -32,8 +32,8 @@ const defaultPlugins = [
 ]
 
 const devServer = {
-	host: '0.0.0.0',
-	port: 8091,
+	// host: '0.0.0.0',
+	// port: 8091,
 	// 在浏览器上全屏显示编译的errors或warnings。默认是关闭的
 	overlay: {
 		error: true,
