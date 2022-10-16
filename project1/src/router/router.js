@@ -25,6 +25,18 @@ const router = [
 		]
 	},
 	{
+		path: '',
+		name: 'set',
+		component: Layout,
+		children: [
+			{
+				path: '/upload',
+				name: 'upload',
+				component: () => import('@view/upload/index.vue')
+			}
+		]
+	},
+	{
 		path: '/login',
 		component: () => import('@view/start/login.vue')
 	},

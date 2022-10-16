@@ -2,6 +2,7 @@
     <el-aside id="siderBar" width="200px" :class="{'not-open':!sidebar, 'is-open': sidebar}">
       <el-menu
       class="el-menu-vertical"
+			router
       @open="handleOpen"
       @close="handleClose"
       :unique-opened='true'
@@ -11,18 +12,24 @@
       :default-openeds="subMenuActive"
       :default-active="$route.path"
       active-text-color="#409EFF">
-      <el-submenu v-for="(item, index) in navList" class="nav-item" :index="item.path" :key="index">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span class="nav-title">{{item.navName}}</span>
-        </template>
-        <el-menu-item-group v-for="(child, i) in item.children" :key="i">
-          <!-- <template slot="title">分组一</template> -->
-          <router-link :to="child.link">
-              <el-menu-item :index="child.link">{{child.name}}</el-menu-item>
-          </router-link>
-        </el-menu-item-group>
-      </el-submenu>
+			<template v-for="(item, index) in navList">
+				<!-- 判断是否只有一个节点 -->
+        <el-menu-item v-if="!item.children" :index="item.path" :key="item.path">
+          <i class="el-icon-setting"></i>
+						<span slot="title">{{item.navName}}</span>
+        </el-menu-item>
+				<!-- 有children -->
+				<el-submenu v-else class="nav-item" :index="item.path" :key="index">
+					<template slot="title">
+						<i class="el-icon-location"></i>
+						<span class="nav-title">{{item.navName}}</span>
+					</template>
+					<el-menu-item-group v-for="(child, i) in item.children" :key="i">
+							<el-menu-item :index="child.link">{{child.name}}</el-menu-item>
+					</el-menu-item-group>
+				</el-submenu>
+			</template>
+
     </el-menu>
     </el-aside>
 </template>
@@ -62,6 +69,10 @@ export default {
 							name: '发送物流'
 						}
 					]
+				},
+				{
+					path: '/upload',
+					navName: '上传文件'
 				}
 			]
 		}
@@ -72,7 +83,8 @@ export default {
 		...mapGetters(['sidebar'])
 	},
 	methods: {
-		handleOpen () {},
+		handleOpen () {
+		},
 		handleClose () {},
 		close () {}
 	},
