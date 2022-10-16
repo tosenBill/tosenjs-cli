@@ -1,0 +1,26 @@
+{
+  "name": "tosen-cli",
+  "version": "1.0.0",
+  "description": "'bin/www'第一行，这个告诉操作系统，当前脚本在 node 环境下执行",
+  "main": "index.js",
+  "bin": {
+    "tosen-cli": "bin/www"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^8.3.0",
+    "download-git-repo": "^3.0.2",
+    "handlebars": "^4.7.7",
+    "inquirer": "^8.2.0",
+    "metalsmith": "^2.3.0",
+    "ora": "^5.1.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {}
+}
