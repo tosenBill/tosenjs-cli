@@ -1,14 +1,7 @@
 <template>
 	<div>
-		<el-upload
-		class="upload-demo"
-		drag
-		action="https://jsonplaceholder.typicode.com/posts/"
-		multiple>
-		<i class="el-icon-upload"></i>
-		<div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-		<!-- <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div> -->
-	</el-upload>
+		<input type="file" @change="handleFileChange" />
+    <el-button @click="handleUpload">upload</el-button>
 	</div>
 </template>
 
@@ -16,7 +9,9 @@
 	export default {
 	data () {
 		return {
-
+			container: {
+				file: null
+			}
 		}
 	},
 	mounted() {
@@ -24,9 +19,13 @@
 	computed: {
 	},
 	methods: {
-		handleOpen () {},
-		handleClose () {},
-		close () {}
+		handleFileChange(e) {
+			const [file] = e.target.files
+			if (!file) return
+			Object.assign(this.$data, this.$options.data())
+			this.container.file = file
+		},
+		async handleUpload() {}
 	}
 }
 </script>
