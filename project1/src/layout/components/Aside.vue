@@ -53,6 +53,10 @@ export default {
 						{
 							link: '/notice',
 							name: '通知设置'
+						},
+						{
+							link: '/virltureScroll',
+							name: '虚拟滚动'
 						}
 					]
 				},

@@ -25,6 +25,7 @@
 	methods: {
 		handleFileChange(e) {
 			const [file] = e.target.files
+			console.log('file', file)
 			if (!file) return
 			Object.assign(this.$data, this.$options.data())
 			this.container.file = file

@@ -21,6 +21,11 @@ const router = [
 				path: 'notice',
 				name: 'set-notice',
 				component: () => import('@view/sets/notices.vue')
+			},
+			{
+				path: 'virltureScroll',
+				name: 'virlture-scroll',
+				component: () => import('@view/sets/virltureScroll.vue')
 			}
 		]
 	},

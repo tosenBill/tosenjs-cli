@@ -1,8 +1,8 @@
 <template>
   <div id="Layout" >
-    <el-container :style="{ height: getScreenHeight +'px', overflow: 'scroll' }">
+    <el-container >
       <asides/>
-      <div class="content">
+      <div class="content" :style="{ height: getScreenHeight +'px', overflow: 'scroll' }">
         <headers class="header-component"/>
         <router-view/>
       </div>
@@ -41,5 +41,9 @@ export default {
 <style lang="stylus" scope>
   .content{
     width:100%;
+		// .header-component{
+		// 	position fixed;
+		// 	top:0;
+		// }
   }
 </style>
