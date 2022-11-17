@@ -37,7 +37,6 @@ export default {
 		onScroll() {
 			// scrollTop常量记录当前滚动的高度
       const scrollTop = this.$refs.list.scrollTop
-			console.log(scrollTop)
 			const start = this.getCurStart(scrollTop)
 			// 对比上一次的开始节点 比较是否发生变化，发生变化后便重新渲染列表
 			if (start !== this.start) {
